@@ -1,0 +1,8 @@
+{
+  "name": "MSU_PLot",
+  "app_id": "8a297410",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
