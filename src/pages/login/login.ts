@@ -39,7 +39,9 @@ export class LoginPage {
         duration: 3000
       }).present();
     }
+    
 
   }
+
 
 }
