@@ -23,6 +23,7 @@ export class RegisterFormComponent {
     this.registerStatus = new EventEmitter<LoginResponse>();
   }
 
+
   // register a FireBase account with email and password provided, handle any errors
   // show a toast indicating whether the account was registered successfully
   async register() {
@@ -38,4 +39,6 @@ export class RegisterFormComponent {
     }
   }
 }
+
+
 

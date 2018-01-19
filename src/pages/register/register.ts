@@ -22,6 +22,7 @@ export class RegisterPage {
     console.log('ionViewDidLoad RegisterPage');
   }
 
+
   register(event: LoginResponse) {
     console.log(event);
     if (!event.error){
@@ -29,6 +30,7 @@ export class RegisterPage {
         message: `Account created: ${event.result.email}`,
         duration: 3000
       }).present();
+      this.navCtrl.setRoot('LoginPage');
     }
     else {
       this.toast.create({
