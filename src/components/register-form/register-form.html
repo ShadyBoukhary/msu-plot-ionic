@@ -22,27 +22,11 @@
           <p style="color: white">Password must be at least 6 characters long.</p>
         </ion-item>
       </div>
-      <!-- <ion-item>
-        <ion-label floating>Email Address</ion-label>
-        <ion-input [(ngModel)]="account.email" type="email" name="email" #email="ngModel" required pattern="[A-Za-z0-9._%+-]{3,}@[a-zA-Z]{3,}([.]{1}[a-zA-Z]{2,}|[.]{1}[a-zA-Z]{2,}[.]{1}[a-zA-Z]{2,})"></ion-input>
-      </ion-item>
-
-      <div padding *ngIf="email.invalid && email.dirty && account.email != ''">
-        <span class="input-error">Email address is not valid.</span>
-      </div>
-      <ion-item>
-        <ion-label floating>Password</ion-label>
-        <ion-input [(ngModel)]="account.password" type="password" name="password" #password="ngModel" required pattern="[a-zA-Z0-9!@#$%^&*]{6,20}$"></ion-input>
-      </ion-item>
-
-      <div padding *ngIf="password.invalid && password.dirty && account.password !=''">
-        <span class="input-error">Must be at least 6 characters.</span>
-      </div> -->
 
     </ion-card-content>
-   
+
   </ion-card>
-    <ion-footer padding>
-      <button ion-button block color="maroon" (click)="register()" [disabled]="registerForm.invalid">Create Account</button>
-      </ion-footer>
+  <ion-footer padding>
+    <button ion-button block color="maroon" (click)="register()" [disabled]="registerForm.invalid">Create Account</button>
+  </ion-footer>
 </form>

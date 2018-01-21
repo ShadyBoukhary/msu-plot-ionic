@@ -18,6 +18,8 @@ export class AuthService {
   }
 
 
+  /* Sign the user in using email and password. Catch any errors
+    Function is async due to returned promises that need to be resolved*/
   async signInWithEmailAndPassword(account: Account) {
 
     try {

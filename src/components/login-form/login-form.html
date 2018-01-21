@@ -5,49 +5,44 @@
     CHANGING ANYTHING IN THE CORRESPONDING COMPONENT/PAGE .TS FILE AND SAVING THE TS FILE.
     DOING THAT FORCES THE HTML FILE TO UPDATE/SAVE. -->
 
-    <form #loginForm="ngForm" novalidate>
-      <ion-card class = "ion-Card">
-        <ion-card-content>
-          <ion-item class="translucent">
-            <ion-label></ion-label>
-            <ion-input class="input-white" placeholder="Email Address..."[(ngModel)]="account.email" type="email" name="email" #email="ngModel" required pattern="[A-Za-z0-9._%+-]{3,}@[a-zA-Z]{3,}([.]{1}[a-zA-Z]{2,}|[.]{1}[a-zA-Z]{2,}[.]{1}[a-zA-Z]{2,})"></ion-input>
-            </ion-item>
-            <div no-padding *ngIf="email.invalid && email.dirty && account.email !=''">
-              <ion-item class="translucent" padding-left >
-                <p style="color: white"class="error">Invalid email address</p>
-              </ion-item>
-            </div>
-            <ion-item class="translucent">
-              <ion-label></ion-label>
-              <ion-input class="input-white" placeholder="Password..."[(ngModel)]="account.password" type="password" name="password" #password="ngModel" required 
-              pattern="[a-zA-Z0-9!@#$%^&*]{6,20}$"></ion-input>
-            </ion-item>
-    
-            <div no-padding *ngIf="password.invalid && password.dirty && account.password !=''">
-              <ion-item class="translucent"padding-left >
-                  <p style="color: white">Password must be at least 6 characters long.</p>
-                </ion-item>
-            </div>
-
-    
-        
-        <div padding-top>
-            <button round color="maroon" large ion-button block (click)="login()" [disabled]="loginForm.invalid">Login</button>
-        </div>
-        <div padding class="button-center">
-            <button round color="light-maroon" ion-button>Forgot password?</button>
-        </div>
-        <ion-item class="transparent-center">
-          <p style="color:white">Don't Have an account?</p>
-            <button outline color="maroon" ion-button (click)="navigateToRegisterPage()" >Create Account Now</button>
+<form #loginForm="ngForm" novalidate>
+  <ion-card class="ion-Card">
+    <ion-card-content>
+      <ion-item class="translucent">
+        <ion-label></ion-label>
+        <ion-input class="input-white" placeholder="Email Address..." [(ngModel)]="account.email" type="email" name="email" #email="ngModel"
+          required pattern="[A-Za-z0-9._%+-]{3,}@[a-zA-Z]{3,}([.]{1}[a-zA-Z]{2,}|[.]{1}[a-zA-Z]{2,}[.]{1}[a-zA-Z]{2,})"></ion-input>
+      </ion-item>
+      <div no-padding *ngIf="email.invalid && email.dirty && account.email !=''">
+        <ion-item class="translucent" padding-left>
+          <p style="color: white" class="error">Invalid email address</p>
         </ion-item>
-          
-        <!-- <ion-row class="login-form__buttons">
-          <div>
-            <button ion-button (click)="navigateToRegisterPage()" color="secondary">Register</button>
-            <button ion-button (click)="login()" [disabled]="loginForm.invalid">Login</button>
-          </div>
-        </ion-row> -->
-      </ion-card-content>
-      </ion-card>
-    </form>
+      </div>
+      <ion-item class="translucent">
+        <ion-label></ion-label>
+        <ion-input class="input-white" placeholder="Password..." [(ngModel)]="account.password" type="password" name="password" #password="ngModel"
+          required pattern="[a-zA-Z0-9!@#$%^&*]{6,20}$"></ion-input>
+      </ion-item>
+
+      <div no-padding *ngIf="password.invalid && password.dirty && account.password !=''">
+        <ion-item class="translucent" padding-left>
+          <p style="color: white">Password must be at least 6 characters long.</p>
+        </ion-item>
+      </div>
+
+
+
+      <div padding-top>
+        <button round color="maroon" large ion-button block (click)="login()" [disabled]="loginForm.invalid">Login</button>
+      </div>
+      <div padding class="button-center">
+        <button round color="light-maroon" ion-button>Forgot password?</button>
+      </div>
+      <ion-item class="transparent-center">
+        <p style="color:white">Don't Have an account?</p>
+        <button outline color="maroon" ion-button (click)="navigateToRegisterPage()">Create Account Now</button>
+      </ion-item>
+
+    </ion-card-content>
+  </ion-card>
+</form>
