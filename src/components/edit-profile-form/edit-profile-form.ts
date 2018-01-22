@@ -15,6 +15,7 @@ export class EditProfileFormComponent implements OnDestroy, OnInit {
 
   private authenticatedUser$: Subscription; // observable
   private authenticatedUser: User;
+  classification: string;
 
 
   
@@ -30,6 +31,8 @@ export class EditProfileFormComponent implements OnDestroy, OnInit {
       this.authenticatedUser = user;
     })
   }
+
+  
 
 
   async saveProfile() {

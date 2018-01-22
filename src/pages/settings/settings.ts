@@ -32,7 +32,8 @@ export class SettingsPage {
 
   signOut() {
     this.auth.signOut();
-    this.navCtrl.setRoot('LoginPage');
-    console.log('d');
+    this.app.getRootNavs()[0].setRoot('LoginPage');
+    // this.navCtrl.setRoot('LoginPage');
+    console.log('Sign Out Successful');
   }
 }

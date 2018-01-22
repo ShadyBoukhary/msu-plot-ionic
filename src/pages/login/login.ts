@@ -7,7 +7,7 @@ import { Subscription } from 'rxjs/Subscription';
 import 'rxjs/add/operator/take';
 import { Observable } from 'rxjs/Observable';
 import { Profile } from '../../models/profile/profile.interface';
-import { OnDestroy } from '@angular/core/src/metadata/lifecycle_hooks';
+import { AuthService } from '../../providers/auth-service/auth-service';
 
 
 
@@ -16,15 +16,13 @@ import { OnDestroy } from '@angular/core/src/metadata/lifecycle_hooks';
   selector: 'page-login',
   templateUrl: 'login.html',
 })
-export class LoginPage implements OnDestroy {
+export class LoginPage {
 
   $authProfile: Subscription;
-  constructor(private data: DataService, private toast: ToastController ,private navCtrl: NavController) {
+  authUser$: Subscription;
+  constructor(private auth: AuthService, private data: DataService, private toast: ToastController ,private navCtrl: NavController) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad LoginPage');
-  }
 
   login(event: LoginResponse) {
     console.log(event);
@@ -42,8 +40,8 @@ export class LoginPage implements OnDestroy {
          console.log('About to try to navigate');
       //  // profile.val() ? this.navCtrl.setRoot('TabsPage') : this.navCtrl.setRoot('EditProfilePage');
          if (profile.val()) {
-           console.log('About to Go to Home Page');
-           this.navCtrl.setRoot('HomePage');
+           console.log('About to Go to Tabs Page');
+           this.navCtrl.setRoot('TabsPage');
          }
          else {
            console.log('About to Edit Profile');
@@ -65,12 +63,13 @@ export class LoginPage implements OnDestroy {
       }).present();
     }
     
-    
 
   }
 
-  ngOnDestroy() {
-    this.$authProfile.unsubscribe();
-    console.log('Destroyed');
-  }
+  
+
+  // ngOnDestroy() {
+  //   //this.$authProfile.unsubscribe();
+  //   console.log('Destroyed');
+  // }
 }

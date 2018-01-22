@@ -1,14 +1,23 @@
-<ion-item class="ion-label">
+<ion-item padding-vertical class="ion-label">
   <ion-label floating color="maroon">First Name</ion-label>
   <ion-input type="text" [(ngModel)]="profile.firstName"></ion-input>
 </ion-item>
 
-<ion-item class="ion-label">
+<ion-item padding-vertical class="ion-label">
   <ion-label floating color="maroon">Last Name</ion-label>
   <ion-input type="text" [(ngModel)]="profile.lastName"></ion-input>
 </ion-item>
 
-<ion-item class="ion-label">
+<ion-item padding-vertical>
+  <ion-label color="maroon">Classification</ion-label>
+  <ion-select color="maroon" [(ngModel)]="profile.classification">
+    <ion-option color="maroon"value="Commuter">Commuter</ion-option>
+    <ion-option value="Resident">Resident</ion-option>
+    <ion-option value="Faculty">Faculty</ion-option>
+  </ion-select>
+</ion-item>
+
+<ion-item padding-vertical class="ion-label">
   <ion-label floating color="maroon">Date of Birth</ion-label>
   <ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="profile.dateOfBirth"></ion-datetime>
 </ion-item>
