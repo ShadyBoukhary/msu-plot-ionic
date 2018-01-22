@@ -39,6 +39,7 @@ export class DataService {
   getProfile(user: User) {
     /* preservesnapshot prevents database from unwrapping data */
     this.profileObject = this.database.object(`/profiles/${user.uid}`, { preserveSnapshot: true});
+    console.log('Returning Profile');
     return this.profileObject.take(1);
   }
 

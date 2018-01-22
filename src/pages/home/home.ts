@@ -12,4 +12,9 @@ export class HomePage {
 
   }
 
+
+  navigateTo(page: string): void {
+    this.navCtrl.push(page);
+  }
 }
+

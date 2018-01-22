@@ -33,3 +33,4 @@ export class LoginFormComponent {
     this.navCtrl.push('RegisterPage');
   }
 }
+

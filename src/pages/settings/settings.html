@@ -16,13 +16,21 @@
 <ion-content padding>
 
   <ion-list no-lines>
-    <button ion-item>
-      <ion-icon padding-right name="person"></ion-icon>
+    <button ion-item (click)="navigateToPage('ProfilePage')" >
+      <ion-icon padding-right name="contact"></ion-icon>
       Profile
     </button>
     <button ion-item>
       <ion-icon padding-right name="bug"></ion-icon>
-      Report A Bug
+    Report a Bug
     </button>
+
+    <button ion-item (click)="navigateToPage('AboutPage')" >
+      <ion-icon padding-right name="information-circle"></ion-icon>
+      About
+    </button>
+
+    <button ion-button color="danger" clear (click)="signOut()">Sign Out</button>
+
   </ion-list>
 </ion-content>

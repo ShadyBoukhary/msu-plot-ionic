@@ -56,8 +56,7 @@ export class AuthService {
     return this.auth.authState;
   }
 
-  signOut() {
-    this.data.database.goOffline();
+  signOut() { 
     this.auth.auth.signOut();
   }
 }

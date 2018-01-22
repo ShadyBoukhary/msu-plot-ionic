@@ -1,6 +1,17 @@
 <ion-header>
   <ion-navbar color="maroon">
     <ion-title>Home</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="navigateTo('SettingsPage')">
+        <ion-icon name="settings"></ion-icon>
+      </button>
+
+    </ion-buttons>
+    <ion-buttons start>
+      <button ion-button icon-only (click)="navigateTo('AlertsPage')">
+        <ion-icon name="time"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 

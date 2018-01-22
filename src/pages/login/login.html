@@ -1,24 +1,16 @@
-<!-- <ion-header>
-
-  <ion-navbar color="maroon">
-    <ion-title>Login</ion-title>
-  </ion-navbar>
-
-</ion-header> -->
-
 
 <ion-content padding class="background">
+  <ion-list no-lines>
+    <ion-item class="marginTop">
+      <img class="img" src="assets/imgs/msu-logo2.png" alt="assets/imgs/logo.png">
+    </ion-item>
+  </ion-list>
   
+      <app-login-form (loginStatus)="login($event)"></app-login-form>
 </ion-content>
 
-<div>
-  <ion-list no-lines>
-  <ion-item class="marginTop">
-    <img class="img" src="assets/imgs/msu-logo2.png" alt="assets/imgs/logo.png">
-  </ion-item>
-</ion-list>
+<!-- <div>
+ 
 
-    <app-login-form (loginStatus)="login($event)"></app-login-form>
-
-</div>
+</div> -->
 
