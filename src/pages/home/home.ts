@@ -42,12 +42,10 @@ export class HomePage {
         this.map.data.loadGeoJson('./assets/geojsons/test.json');
         this.map.data.loadGeoJson('./assets/geojsons/google.json');
         this.map.data.loadGeoJson('./assets/geojsons/data.json');
+        this.map.data.loadGeoJson('./google.json');
+        this.map.data.loadGeoJson('../assets/geojsons/data.json');
 
-
-
-      
-      //this.map.data.loadGeoJson('./assets/geojsons/data.json');
-      
+      let i = 's';
       this.map.data.setStyle({
         fillColor: 'green'
       });
