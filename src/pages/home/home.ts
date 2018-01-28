@@ -39,7 +39,10 @@ export class HomePage {
       this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
         console.log('mapping');
 
-        this.map.data.loadGeoJson('assets/imgs/google.json');
+        this.map.data.loadGeoJson('./assets/geojsons/test.json');
+        this.map.data.loadGeoJson('./assets/geojsons/google.json');
+        this.map.data.loadGeoJson('./assets/geojsons/data.json');
+
 
 
       
