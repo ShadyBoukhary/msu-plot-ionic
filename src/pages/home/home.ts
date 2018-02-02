@@ -48,7 +48,7 @@ export class HomePage {
       let spacesData = new google.maps.Data();
       let lotsData = new google.maps.Data();
       spacesData.loadGeoJson('./google.json');
-      lotsData.loadGeoJson('assets/geojsons/lots.json');
+      lotsData.loadGeoJson('./assets/geojsons/lots.json');
       //spacesData.setMap(map);
       lotsData.setStyle({visible: true, fillColor: 'blue'});
       spacesData.setStyle({visible: true, fillColor: 'green'});
