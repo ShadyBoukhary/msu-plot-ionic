@@ -61,6 +61,8 @@ export class HomePage {
 
       
 
+      
+
        map.addListener('zoom_changed', function() {
         this.zoomLevel = map.getZoom();
         console.log(this.zoomLevel);
