@@ -47,7 +47,7 @@ export class HomePage {
       // Data layers, 1 for parking spaces and 1 for the entire parking lots
       let spacesData = new google.maps.Data();
       let lotsData = new google.maps.Data();
-      spacesData.loadGeoJson('./google.json');
+      spacesData.loadGeoJson('.assets/geojsons/data.json');
       lotsData.loadGeoJson('./assets/geojsons/lots.json');
       //spacesData.setMap(map);
       lotsData.setStyle({visible: true, fillColor: 'blue'});
