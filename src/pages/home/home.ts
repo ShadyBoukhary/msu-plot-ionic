@@ -11,11 +11,8 @@ declare var google;
 export class HomePage {
 
   @ViewChild('map') mapElement: ElementRef;
-  map: any;
-  // start = 'chicago, il';
-  // end = 'chicago, il';
-  // directionsService = new google.maps.DirectionsService;
-  // directionsDisplay = new google.maps.DirectionsRenderer;
+  zoomLevel: number = 0;
+
 
   constructor(public navCtrl: NavController, private geolocation: Geolocation) {
 
@@ -26,73 +23,99 @@ export class HomePage {
   }
 
   initMap() {
-    //this.geolocation.getCurrentPosition().then((position) => {
-
-      //let latLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
 
       let mapOptions = {
-        center: {lat: 33.874427, lng: -98.521045},
+        center: {lat: 33.872861, lng: -98.521279},
         zoom: 16,
-        mapTypeId: google.maps.MapTypeId.SATELLITE
+        mapTypeId: google.maps.MapTypeId.HYBRID,
+        streetViewControl: false,
+        rotateControl: false,
+        fullScreenControl: true,
+        mapTypeControl: false
       }
 
-      this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
-        console.log('mapping');
+      var map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
 
-        this.map.data.loadGeoJson('./assets/geojsons/test.json');
-        this.map.data.loadGeoJson('./assets/geojsons/google.json');
-        this.map.data.loadGeoJson('./assets/geojsons/data.json');
-        this.map.data.loadGeoJson('./google.json');
-        this.map.data.loadGeoJson('../assets/geojsons/data.json');
+       // map.data.loadGeoJson('./assets/geojsons/test.json');
+        //map.data.loadGeoJson('./assets/geojsons/google.json');
+       // map.data.loadGeoJson('./assets/geojsons/data.json');
 
-      let i = 's';
-      this.map.data.setStyle({
-        fillColor: 'green'
-      });
+
+        // this one
+        //map.data.loadGeoJson('./google.json');
+
+      // Data layers, 1 for parking spaces and 1 for the entire parking lots
+      let spacesData = new google.maps.Data();
+      let lotsData = new google.maps.Data();
+      spacesData.loadGeoJson('./google.json');
+      lotsData.loadGeoJson('assets/geojsons/lots.json');
+      //spacesData.setMap(map);
+      lotsData.setStyle({visible: true, fillColor: 'blue'});
+      spacesData.setStyle({visible: true, fillColor: 'green'});
+
+      lotsData.setMap(map);
+
+       // map.data.loadGeoJson('../assets/geojsons/data.json');
+
+      this.zoomLevel = map.getZoom();
+
       
-    // }, (err) => {
-    //   console.log(err);
-    // });
-    //this.directionsDisplay.setMap(this.map);
+
+       map.addListener('zoom_changed', function() {
+        this.zoomLevel = map.getZoom();
+        console.log(this.zoomLevel);
+        if (this.zoomLevel < 18) {
+          //map.data.setStyle({visible: false});
+          lotsData.setMap(map);
+          spacesData.setMap(null);
+
+        }
+        else {
+          //map.data.setStyle({visible: true, fillColor: 'green'});
+          lotsData.setMap(null);
+          spacesData.setMap(map);
+
+        }
+      });
+
+      // zoom to the parking lot that has been clicked
+      lotsData.addListener('click', function(event){
+        // get the center coordinates from the geoJSON
+        let latlong = event.feature.getProperty('center').split(/, ?/);
+        console.log(latlong);
+        // convert coordinates from string into a latLong literal
+        let ll = new google.maps.LatLng(parseFloat(latlong[0]), parseFloat(latlong[1]));
+        map.setCenter(ll);
+        map.setZoom(19);
+      })
+
   }
-  //{lat: 33.874427, lng: -98.521045}
-  // calculateAndDisplayRoute() {
-  //   this.directionsService.route({
-  //     origin: this.start,
-  //     destination: this.end,
-  //     travelMode: 'DRIVING'
-  //   }, (response, status) => {
-  //     if (status === 'OK') {
-  //       this.directionsDisplay.setDirections(response);
-  //     } else {
-  //       window.alert('Directions request failed due to ' + status);
-  //     }
+
+
+
+  // addMarker(){
+ 
+  //   let marker = new google.maps.Marker({
+  //     map: this.map,
+  //     animation: google.maps.Animation.DROP,
+  //     position: this.map.getCenter()
   //   });
+   
+  //   let content = "<h4>Information!</h4>";          
+   
+  //   this.addInfoWindow(marker, content);
+   
   // }
 
-  addMarker(){
+  // addInfoWindow(marker, content){
  
-    let marker = new google.maps.Marker({
-      map: this.map,
-      animation: google.maps.Animation.DROP,
-      position: this.map.getCenter()
-    });
+  //   let infoWindow = new google.maps.InfoWindow({
+  //     content: content
+  //   });
    
-    let content = "<h4>Information!</h4>";          
+  //   google.maps.event.addListener(marker, 'click', () => {
+  //     infoWindow.open(this.map, marker);
+  //   });
    
-    this.addInfoWindow(marker, content);
-   
-  }
-
-  addInfoWindow(marker, content){
- 
-    let infoWindow = new google.maps.InfoWindow({
-      content: content
-    });
-   
-    google.maps.event.addListener(marker, 'click', () => {
-      infoWindow.open(this.map, marker);
-    });
-   
-  }
+  // }
 }
