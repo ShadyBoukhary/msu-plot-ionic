@@ -1,6 +1,7 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
 import { NavController, IonicPage, Platform } from 'ionic-angular';
 import { Geolocation, GeolocationOptions, Geoposition } from '@ionic-native/geolocation';
+import { CenterControl } from '../../models/map/center-control';
 declare var google;
 
 @IonicPage()
@@ -12,6 +13,7 @@ export class HomePage {
 
   @ViewChild('map') mapElement: ElementRef;
   zoomLevel: number = 0;
+ 
 
 
   constructor(public navCtrl: NavController, private geolocation: Geolocation) {
@@ -30,7 +32,7 @@ export class HomePage {
         mapTypeId: google.maps.MapTypeId.HYBRID,
         streetViewControl: false,
         rotateControl: false,
-        fullScreenControl: true,
+        fullScreenControl: false,
         mapTypeControl: false
       }
 
@@ -90,34 +92,14 @@ export class HomePage {
         map.setCenter(ll);
         map.setZoom(19);
       })
+        // Create the DIV to hold the control and call the CenterControl()
+        // constructor passing in this DIV.
+        let centerControlDiv = document.createElement('div');
+        let centerControl = new CenterControl(centerControlDiv, map);
 
+        //centerControlDiv.index = 1;
+        map.controls[google.maps.ControlPosition.TOP_CENTER].push(centerControlDiv);
   }
 
-
-
-  // addMarker(){
- 
-  //   let marker = new google.maps.Marker({
-  //     map: this.map,
-  //     animation: google.maps.Animation.DROP,
-  //     position: this.map.getCenter()
-  //   });
-   
-  //   let content = "<h4>Information!</h4>";          
-   
-  //   this.addInfoWindow(marker, content);
-   
-  // }
-
-  // addInfoWindow(marker, content){
- 
-  //   let infoWindow = new google.maps.InfoWindow({
-  //     content: content
-  //   });
-   
-  //   google.maps.event.addListener(marker, 'click', () => {
-  //     infoWindow.open(this.map, marker);
-  //   });
-   
-  // }
 }
+
