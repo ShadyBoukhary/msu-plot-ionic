@@ -7,12 +7,30 @@
 <ion-header>
 
   <ion-navbar color="maroon">
-    <ion-title>AboutPage</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+  <ion-list>
+    <ion-list-header>About this application</ion-list-header>
+    <ion-item>
+        <ion-label>App Name</ion-label>
+        <ion-note item-end> {{info?.name}} </ion-note>
+      </ion-item>
+    <ion-item>
+      <ion-label>Package Name</ion-label>
+      <ion-note item-end> {{info?.package}} </ion-note>
+    </ion-item>
+    <ion-item>
+      <ion-label>Version Number</ion-label>
+      <ion-note item-end>{{info?.version}}</ion-note>
+    </ion-item>
+    <ion-item>
+      <ion-label>Version Code</ion-label>
+      <ion-note item-end>{{info?.versionCode}}</ion-note>
+    </ion-item>
+  </ion-list>
 
 </ion-content>

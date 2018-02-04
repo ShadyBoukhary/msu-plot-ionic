@@ -14,6 +14,7 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFireDatabaseModule } from 'angularfire2/database-deprecated';
 import { FormsModule } from '@angular/forms';
 import { Geolocation } from '@ionic-native/geolocation';
+import { AppVersion } from '@ionic-native/app-version';
 
 
 @NgModule({
@@ -41,6 +42,7 @@ import { Geolocation } from '@ionic-native/geolocation';
     AuthService,
     DataService,
     Geolocation,
+    AppVersion,  
   ]
 })
 export class AppModule {}
