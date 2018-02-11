@@ -57,6 +57,7 @@ export class HomePage {
       spacesData.setStyle({visible: true, fillColor: 'green'});
 
       lotsData.setMap(map);
+      
 
        // map.data.loadGeoJson('../assets/geojsons/data.json');
 
