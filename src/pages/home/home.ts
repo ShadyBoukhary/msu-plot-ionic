@@ -50,6 +50,7 @@ export class HomePage {
       let spacesData = new google.maps.Data();
       let lotsData = new google.maps.Data();
       spacesData.loadGeoJson('./assets/geojsons/data.json');
+      spacesData.loadGeoJson('./assets/geojsons/py-resident_spaces.json');
       lotsData.loadGeoJson('./assets/geojsons/lots.json');
       //spacesData.setMap(map);
       lotsData.setStyle({visible: true, fillColor: 'blue'});
