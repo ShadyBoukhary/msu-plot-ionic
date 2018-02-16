@@ -9,7 +9,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { AngularFireModule } from 'angularfire2';
 import { AuthService } from '../providers/auth-service/auth-service';
 import { DataService } from '../providers/database-service/database-service';
-import { FIREBASE_CONFIG } from './app.firebase.config';
+import { FIREBASE_CONFIG } from '../firebase-config/app.firebase.config';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFireDatabaseModule } from 'angularfire2/database-deprecated';
 import { FormsModule } from '@angular/forms';
