@@ -27,14 +27,6 @@ export class AboutPage implements OnInit {
   }
 
   async getAppInfo() {
-    // this.info.name = await this.app.getAppName();
-    // console.log(this.info.name);
-    // this.info.package = await this.app.getPackageName();
-    // console.log(this.info.package);
-    // this.info.version = await this.app.getVersionNumber();
-    // console.log(this.info.version);
-    // this.info.versionCode = await this.app.getVersionCode();
-    // console.log(this.info.versionCode);
     this.info = {
       name: await this.app.getAppName(),
       package: await this.app.getPackageName(),
