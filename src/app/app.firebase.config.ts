@@ -6,9 +6,3 @@ export const FIREBASE_CONFIG = {
     storageBucket: "",
     messagingSenderId: "271158989541"
 };
-
-
-
-
-
-
