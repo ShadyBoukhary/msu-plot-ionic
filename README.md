@@ -2,13 +2,13 @@
 
 Mobile application (in development) for Midwestern State University that enables students to locate available parking spaces around campus in real time. The project associated with determining which spaces are available can be found at https://github.com/rugbyprof/Parking-Lot-Occupancy-Tracking.
 
-## Screen shots of the current version of the application
+## Screenshots of the current version of the application
 
 <img src="./resources/screenshots/IMG_9088.png" width="250"> <img src="./resources/screenshots/IMG_9089.png" width="250">  <img src="./resources/screenshots/IMG_9090.png" width="250">
 <img src="./resources/screenshots/IMG_9091.png" width="250">  <img src="./resources/screenshots/IMG_9092.png" width="250">  <img src="./resources/screenshots/IMG_9093.png" width="250">
 
 
-## Buit with
+## Built with
 
 * **Ionic Framework Cli: 3.19.1**
 * **Apache Cordova 8.0**
@@ -16,7 +16,7 @@ Mobile application (in development) for Midwestern State University that enables
  
 ## Deployment
 
-* Not yet available
+* **Not yet available**
 
 ## Authors
 
