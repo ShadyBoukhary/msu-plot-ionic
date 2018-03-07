@@ -1,8 +1,26 @@
-# msu-plot-ionic
-Midwestern State University app for p-lot project
+# Midwestern State University Mobile Application for p-lot occupancy tracking project
 
-Ionic 3 project 
+Mobile application (in development) for Midwestern State University that enables students to locate available parking spaces around campus in real time. The project associated with determining which spaces are available can be found at https://github.com/rugbyprof/Parking-Lot-Occupancy-Tracking.
 
-@ionic/cli-utils  : 1.19.1
-ionic (Ionic CLI) : 3.19.1
-cordova (Cordova CLI) : 8.0.0
+## Screen shots of the current version of the application
+
+
+## Buit with
+
+* **Ionic Framework Cli: 3.19.1**
+* **Apache Cordova 8.0**
+* **Backend: Firebase**
+ 
+## Deployment
+
+* Not yet available
+
+## Authors
+
+* **Shady Boukhary** 
+
+
+## References
+
+* https://ionicframework.com/docs/
+
