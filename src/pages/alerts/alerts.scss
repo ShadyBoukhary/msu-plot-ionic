@@ -1,3 +1,14 @@
 page-alerts {
-
+    .alertOn{
+            background-color: whitesmoke;
+            h1{
+                color: black;
+            }
+    }
+    .alertOff{
+            background-color: whitesmoke;
+            h1{
+                color: lightgray;
+            }
+    }
 }

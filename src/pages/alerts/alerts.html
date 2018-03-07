@@ -8,6 +8,14 @@
 
   <ion-navbar color="maroon">
     <ion-title>Alerts</ion-title>
+    <ion-buttons start>
+      <button ion-button clear>EDIT</button>
+    </ion-buttons>
+    <ion-buttons end>
+      <button ion-button icon-only>
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 
 </ion-header>
@@ -15,4 +23,49 @@
 
 <ion-content padding>
 
+  <!-- <div *ngIf="alertOn == true; else off">
+  <ion-list class="alertOn">
+    <ion-item >
+      <ion-label>
+        <h1>8:00am</h1>
+        <h3>Alert, Tue Thu</h3>
+        <h3>Bolin</h3>
+      </ion-label>
+      <ion-toggle [(ngModel)]="alertOn" ></ion-toggle>
+    </ion-item>
+  </ion-list>
+</div> -->
+
+<ion-list >
+    <ion-item class="alertOn">
+      <ion-label>
+        <h1>8:00am</h1>
+        <h3>Alert, Tue Thu</h3>
+        <h3>Bolin</h3>
+      </ion-label>
+      <ion-toggle [(ngModel)]="alertOn" ></ion-toggle>
+    </ion-item>
+    <ion-item class="alertOff">
+        <ion-label>
+          <h1>8:00am</h1>
+          <h3>Alert, Tue Thu</h3>
+          <h3>Bolin</h3>
+        </ion-label>
+        <ion-toggle [(ngModel)]="alertOn" ></ion-toggle>
+      </ion-item>
+
+  </ion-list>
+
+<!-- <ng-template #off>
+    <ion-list class="alertOff">
+        <ion-item >
+          <ion-label>
+            <h1>8:00am</h1>
+            <h3>Alert, Tue Thu</h3>
+            <h3>Bolin</h3>
+          </ion-label>
+          <ion-toggle [(ngModel)]="alertOn" ></ion-toggle>
+        </ion-item>
+      </ion-list>
+</ng-template> -->
 </ion-content>
