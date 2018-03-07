@@ -22,6 +22,9 @@ Mobile application (in development) for Midwestern State University that enables
 
 * **Shady Boukhary** 
 
+## Additional Information
+
+* **Repository associated with defining the parking spaces on google maps: https://github.com/ShadyBoukhary/parking-spaces-overlays-MSU**
 
 ## References
 
