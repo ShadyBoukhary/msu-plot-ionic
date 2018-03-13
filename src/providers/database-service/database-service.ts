@@ -9,7 +9,6 @@ import { AuthService } from '../auth-service/auth-service';
 import 'rxjs/add/operator/take';
 import "rxjs/add/operator/map";
 import "rxjs/add/operator/mergeMap";
-import 'rxjs/add/observable/forkjoin';
 import 'rxjs/add/operator/first';
 
 
