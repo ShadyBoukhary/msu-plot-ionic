@@ -3,6 +3,6 @@ export interface Profile {
     lastName: string;
     email: string;
     classification: string;
-    dateOfBirth: Date;
+    dateOfBirth: Date,
     $key?: string;
 }

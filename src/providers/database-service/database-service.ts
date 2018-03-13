@@ -9,6 +9,12 @@ import { AuthService } from '../auth-service/auth-service';
 import 'rxjs/add/operator/take';
 import "rxjs/add/operator/map";
 import "rxjs/add/operator/mergeMap";
+import 'rxjs/add/observable/forkjoin';
+import 'rxjs/add/operator/first';
+
+
+import { Alert } from '../../models/alert/alert.interface';
+import { Observable } from 'rxjs/Observable';
 
 
 
@@ -18,6 +24,8 @@ export class DataService {
   /*profileObject: AngularFireObject<Profile>*/
   profileObject: FirebaseObjectObservable<Profile>;
   profileList: FirebaseListObservable<Profile>;
+  alertObject: FirebaseObjectObservable<Alert>;
+  alertList: FirebaseListObservable<Alert[]>;
 
   
   constructor(private auth: AuthService, private database: AngularFireDatabase) {
@@ -59,4 +67,39 @@ export class DataService {
     }
   }
 
+  /* Authenticated user and alert to be saved */
+  async saveAlert(user: User, alert: Alert) {
+    try {
+      /* Try to save the alert in the database*/
+      await this.database.list(`/alerts/${user.uid}`).push(alert);
+      return true;
+    }
+    catch (e) {
+      console.log(e);
+      return false;
+    }
+  }
+
+  // get the list of the results for a user
+   getAlerts(user: User): FirebaseListObservable<Alert[]> {
+    return this.database.list(`/alerts/${user.uid}`);
+  }
+
+  async updateAlert(user: User, alert: Alert) {
+    // get reference to alert object
+    this.alertObject = this.database.object(`/alerts/${user.uid}/${alert.$key}`);
+
+    try {
+      // update the alert
+      await this.alertObject.set(alert);
+      return true;
+      // catch any errors
+    } 
+    catch (error) {
+      console.log(error);
+      return false;
+    }
+  }
 }
+
+

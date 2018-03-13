@@ -10,7 +10,7 @@ import { IonicModule } from 'ionic-angular';
         LoginFormComponent,
         RegisterFormComponent,
         EditProfileFormComponent,
-        ProfileViewComponent
+        ProfileViewComponent,
     ],
     imports: [
         FormsModule,
@@ -20,7 +20,7 @@ import { IonicModule } from 'ionic-angular';
         LoginFormComponent,
         RegisterFormComponent,
         EditProfileFormComponent,
-        ProfileViewComponent
+        ProfileViewComponent,
     ]
 })
 export class ComponentsModule { }

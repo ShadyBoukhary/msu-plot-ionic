@@ -4,5 +4,9 @@ export interface Alert {
         minute: string,
         timeOfDay: string
     },
-    day: boolean[]
+    day: string[],
+    state: boolean,
+    lot: string,
+    repeat: boolean,
+    $key?:string
 }
