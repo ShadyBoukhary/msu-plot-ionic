@@ -48,7 +48,7 @@ $colors: (
 // App iOS Variables
 // --------------------------------------------------
 // iOS only Sass variables can go here
-
+$toggle-ios-background-color-on: color($colors, maroon);
 
 
 
@@ -56,6 +56,7 @@ $colors: (
 // --------------------------------------------------
 // Material Design only Sass variables can go here
 $item-md-detail-push-show: true;
+$toggle-md-active-color: color($colors, maroon);
 
 
 
@@ -63,7 +64,7 @@ $item-md-detail-push-show: true;
 // --------------------------------------------------
 // Windows only Sass variables can go here
 $item-wp-detail-push-show: true;
-
+$toggle-wp-active-color: color($colors, maroon);
 
 
 

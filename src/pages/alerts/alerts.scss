@@ -17,4 +17,17 @@ page-alerts {
     .greyBack {
         background-color: rgb(235, 235, 235);
     }
+    .middle {
+        //vertical-align: middle;
+        text-align: center;
+        //align-content: center;
+        height: 90%;
+        //width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: x-large;
+        color: maroon;
+        text-shadow: 5px 5px 10px #000;
+    }
 }

@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="io.ionic.starter" version="0.3.4" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="io.ionic.starter" version="0.6.7" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>MSU_PLot</name>
     <description>An awesome Ionic/Cordova app.</description>
-    <author email="hi@ionicframework" href="http://ionicframework.com/">Ionic Framework Team</author>
+    <author email="sb199898.sb@gmail.com" href="http://ionicframework.com/">Shady Boukhary</author>
     <content src="index.html" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
@@ -86,4 +86,5 @@
     <engine name="ios" spec="^4.5.4" />
     <engine name="android" spec="7.0.0" />
     <plugin name="cordova-plugin-globalization" spec="^1.0.9" />
+    <plugin name="cordova-plugin-local-notification" spec="^0.9.0-beta.2" />
 </widget>

@@ -16,6 +16,8 @@ import { FormsModule } from '@angular/forms';
 import { Geolocation } from '@ionic-native/geolocation';
 import { AppVersion } from '@ionic-native/app-version';
 import { Globalization } from '@ionic-native/globalization';
+import { ApiServiceProvider } from '../providers/api-service/api-service';
+import { LocalNotifications } from '@ionic-native/local-notifications';
 
 
 @NgModule({
@@ -45,6 +47,8 @@ import { Globalization } from '@ionic-native/globalization';
     Geolocation,
     AppVersion, 
     Globalization,
+    ApiServiceProvider,
+    LocalNotifications,
     
   ]
 })

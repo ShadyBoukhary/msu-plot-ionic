@@ -24,7 +24,7 @@
 <ion-content padding class="greyBack">
 
   <ion-list>
-    <div *ngFor="let alert of alertList | async">
+    <div *ngFor="let alert of alertList | async; let x = index" >
       <div *ngIf="alert.state == true; else off">
         <ion-item-sliding>
           <ion-item class="alertOn">
@@ -38,7 +38,7 @@
             <ion-toggle [(ngModel)]="alert.state" (ionChange)="updateAlert(alert)"></ion-toggle>
           </ion-item>
           <ion-item-options side="left">
-            <button ion-button color="danger">Delete</button>
+            <button ion-button (click)="deleteAlert(alert)" color="danger">Delete</button>
           </ion-item-options>
           <ion-item-options side="right">
             <button ion-button (click)="editAlert(alert)" color="primary">Edit</button>
@@ -58,7 +58,7 @@
             <ion-toggle [(ngModel)]="alert.state" (ionChange)="updateAlert(alert)"></ion-toggle>
           </ion-item>
           <ion-item-options side="left">
-            <button ion-button color="danger">Delete</button>
+            <button ion-button (click)="deleteAlert(alert)" color="danger">Delete</button>
           </ion-item-options>
           <ion-item-options side="right">
             <button ion-button (click)="editAlert(alert)" color="primary">Edit</button>
@@ -67,5 +67,9 @@
       </ng-template>
     </div>
   </ion-list>
+
+  <div class="middle" *ngIf="count == 0">
+    <span class="middle">No Alerts</span>
+  </div>
 
 </ion-content>
