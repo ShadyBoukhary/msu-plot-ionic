@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnDestroy } from '@angular/core';
 //import { AngularFireDatabase/*, AngularFireObject*/} from 'angularfire2/database';
 import { FirebaseObjectObservable, AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database-deprecated';
 import { User, database } from 'firebase/app';
@@ -14,17 +14,20 @@ import 'rxjs/add/operator/first';
 
 import { Alert } from '../../models/alert/alert.interface';
 import { Observable } from 'rxjs/Observable';
+import { Subscription } from 'rxjs/Subscription';
+import { first } from 'rxjs/operator/first';
 
 
 
 @Injectable()
-export class DataService {
+export class DataService implements OnDestroy {
 
   /*profileObject: AngularFireObject<Profile>*/
   profileObject: FirebaseObjectObservable<Profile>;
   profileList: FirebaseListObservable<Profile>;
   alertObject: FirebaseObjectObservable<Alert>;
   alertList: FirebaseListObservable<Alert[]>;
+  sub: Subscription;
 
 
   constructor(private auth: AuthService, private database: AngularFireDatabase) {
@@ -78,6 +81,20 @@ export class DataService {
       return false;
     }
   }
+  async getFirstAlert(user: User)  {
+    try {
+      // this.sub = await this.getAlerts(user).subscribe((alerts: Alert[]) => {
+      //   let first =  alerts[alerts.length - 1];
+      //   console.log(first);
+      //   return first.$key;
+
+      // })
+      return await this.getAlerts(user).map((alerts: Alert[]) => alerts[alerts.length - 1]);
+    } catch (error) {
+      console.log(error);
+      //return ' hi';
+    }
+  }
 
   // get the list of the results for a user
   getAlerts(user: User): FirebaseListObservable<Alert[]> {
@@ -116,6 +133,12 @@ export class DataService {
       return false;
     }
   }
+
+  ngOnDestroy() {
+    this.sub.unsubscribe();
+  }
+  
+  
 }
 
 

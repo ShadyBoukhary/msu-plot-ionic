@@ -56,9 +56,15 @@ export class AlertsPage implements OnDestroy {
     modal.onDidDismiss(alert => {
       if (alert) {
         this.alert = alert;
-        console.log(this.alert);
         this.save(this.alert).then().catch(e => console.log(e));
-        this.events.publish('alert-created', this.alert);
+        // get the alert we just saved but including the key
+        this.data.getFirstAlert(this.authenticatedUser).then(al => {
+          let sub1 = al.subscribe((aler: Alert) => this.alert = aler);
+          sub1.unsubscribe();
+          
+          this.events.publish('alert-created', this.alert, this.authenticatedUser);
+        }).catch(e => console.log(e));
+        
       }
 
     });
@@ -94,6 +100,9 @@ export class AlertsPage implements OnDestroy {
           duration: 3000
         }).present();
       }
+      else {
+        this.events.publish('alert-edited', alert, this.authenticatedUser);
+      }
     }
    }
 
@@ -121,6 +130,9 @@ export class AlertsPage implements OnDestroy {
           message: 'An error has occurred',
           duration: 3000
         }).present();
+      }
+      else {
+        this.events.publish('alert-deleted');
       }
     }
    }
