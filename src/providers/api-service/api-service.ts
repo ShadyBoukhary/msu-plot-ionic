@@ -12,7 +12,17 @@ import { User } from 'firebase/app';
 @Injectable()
 export class ApiServiceProvider {
 
-  alert: Alert;
+  alert: Alert = {
+    time: {
+      hour: '1',
+      minute: '1',
+      timeOfDay: 'am'
+    },
+    day: [],
+    state: false,
+    repeat: false,
+    lot: ''
+  };
   constructor(private events: Events, private toast: ToastController, private notf: LocalNotifications, private data: DataService) {
 
   }
@@ -126,25 +136,25 @@ export class ApiServiceProvider {
     let daysNum: string = '';
     days.forEach(day => {
       if (day == 'Mon') {
-        daysNum += '0';
-      }
-      else if (day == 'Tue') {
         daysNum += '1';
       }
-      else if (day == 'Wed') {
+      else if (day == 'Tue') {
         daysNum += '2';
       }
-      else if (day == 'Thu') {
+      else if (day == 'Wed') {
         daysNum += '3';
       }
-      else if (day == 'Fri') {
+      else if (day == 'Thu') {
         daysNum += '4';
       }
-      else if (day == 'Sat') {
+      else if (day == 'Fri') {
         daysNum += '5';
       }
-      else {
+      else if (day == 'Sat') {
         daysNum += '6';
+      }
+      else {
+        daysNum += '0';
       }
     })
     return daysNum;

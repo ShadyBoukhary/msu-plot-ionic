@@ -47,7 +47,7 @@ export class AddAlertPage {
       this.currentHour = hours[1];
       console.log(this.date);
       this.dayInt = new Date().getDay();
-
+      console.log(this.dayInt);
 
       if (this.dayInt == 1) {
         this.day = "Mon";
