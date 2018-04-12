@@ -36,6 +36,7 @@ export class AddAlertPage {
   hour: string;
   timeOfDay: string;
   minutes: string;
+  currentMinutes: string;
   constructor(public navParams: NavParams, private view: ViewController, private global: Globalization) {
 
     // get date based on timezone
@@ -45,6 +46,8 @@ export class AddAlertPage {
       let hours = time[0].split("T");
       let minutes = time[1];
       this.currentHour = hours[1];
+      this.currentMinutes = minutes;
+
       console.log(this.date);
       this.dayInt = new Date().getDay();
       console.log(this.dayInt);
@@ -138,7 +141,11 @@ export class AddAlertPage {
     // if not repeating
     else {
       // check whether alert should be on current day or next day
-      if (parseInt(this.hour) > parseInt(this.currentHour)) {
+
+      if (this.hour == '12' && this.timeOfDay == 'pm') {
+        this.hour = '24';
+      }
+      if ((parseInt(this.hour) > parseInt(this.currentHour)) || ((parseInt(this.hour) == parseInt(this.currentHour)) && (parseInt(this.minutes) > parseInt(this.currentMinutes)))) {
         day = [this.day];
       }
       else {
