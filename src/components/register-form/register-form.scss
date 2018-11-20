@@ -1,18 +1,43 @@
-.register-form__button {
-    padding: 10px;
-    float: right;
-
-    div button {
-        margin-right: 10px;
-    }
+app-register-form {
+    .login {
+        padding-top: 3%;
+        padding-left: 5%;
+        padding-right: 5%;
+      }
+    
+      .ion-card {
+          margin-top: -5%;
+          background-color: transparent;
+      }
+    
+      .login-translucent {
+          margin-top: 10%;
+          margin-left: 3%;
+          margin-right: 3%;
+          //background-color: maroon;
+          font-weight: bold;
+          width: 94%;
+          height: 45px;
+      }
+    
+      .item {
+          ::placeholder {color: white}
+          color: white;
+          background-color:transparentize($color: rgb(255,255,255), $amount: 0.75) !important;
+          margin-top: 10px;
+          margin-left: 3%;
+          margin-right: 3%;
+          border-radius: 25px;
+          width: 94%;
+          height: 30px;
+      }
+      .logo {
+          text-align: center;
+          font-weight: bold;
+          font-size: xx-large;
+          color: white;
+          margin-top: 30%;
+          margin-bottom: 30%;
+          
+      }
 }
-
-.input-error {
-    color: red;
-    padding: 20px;
-}
-
-.transparent {
-    background-color: transparent;
-}
-

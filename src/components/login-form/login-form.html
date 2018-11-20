@@ -1,48 +1,29 @@
-<!-- DISCLAIMER!!!!!!
-    AS OF THE TIME OF WRITING THIS, THERE EXISTS A BUG IN IONIC 3
-    WHEN USING FORMS IN AN HTML FILE FROM @ANGULAR/FORMS, THE HTML FILE CONTAINING
-    THE FORMS IS NOT UPDATED EVEN WHEN YOU SAVE IT. A WORKAROUND THIS BUG WOULD BE
-    CHANGING ANYTHING IN THE CORRESPONDING COMPONENT/PAGE .TS FILE AND SAVING THE TS FILE.
-    DOING THAT FORCES THE HTML FILE TO UPDATE/SAVE. -->
 
-<form #loginForm="ngForm" novalidate>
-  <ion-card class="transparent">
-    <ion-card-content>
-      <ion-item class="translucent">
-        <ion-label></ion-label>
-        <ion-input class="input-white" placeholder="Email Address..." [(ngModel)]="account.email" type="email" name="email" #email="ngModel"
-          required pattern="[A-Za-z0-9._%+-]{3,}@[a-zA-Z]{3,}([.]{1}[a-zA-Z]{2,}|[.]{1}[a-zA-Z]{2,}[.]{1}[a-zA-Z]{2,})"></ion-input>
-      </ion-item>
-      <div no-padding *ngIf="email.invalid && email.dirty && account.email !=''">
-        <ion-item class="translucent" padding-left>
-          <p style="color: white" class="error">Invalid email address</p>
-        </ion-item>
+  <div padding class="img">
+    <img src="assets/imgs/logo.png" alt="Image Missing">
+  </div>
+  <ion-item no-lines class="item">
+    <ion-input type="email" placeholder="Email" [(ngModel)]="account.email"></ion-input>
+  </ion-item>
+
+  <ion-item no-lines class="item">
+    <ion-input type="password" placeholder="Password" [(ngModel)]="account.password"></ion-input>
+  </ion-item>
+  <ion-row>
+    <ion-col col-6>
+      <button class="register-translucent" clear small ion-button (click)=register()>Don't have an account?</button>
+
+    </ion-col>
+    <ion-col col-6>
+      <div style="text-align: end">
+        <button class="forgot-translucent" clear small ion-button (click)=register()>Forgot password?</button>
+
       </div>
-      <ion-item class="translucent">
-        <ion-label></ion-label>
-        <ion-input class="input-white" placeholder="Password..." [(ngModel)]="account.password" type="password" name="password" #password="ngModel"
-          required pattern="[a-zA-Z0-9!@#$%^&*]{6,20}$"></ion-input>
-      </ion-item>
-
-      <div no-padding *ngIf="password.invalid && password.dirty && account.password !=''">
-        <ion-item class="translucent" padding-left>
-          <p style="color: white">Password must be at least 6 characters long.</p>
-        </ion-item>
-      </div>
+    </ion-col>
 
 
+  </ion-row>
 
-      <div padding-top>
-        <button round color="maroon" large ion-button block (click)="login()" [disabled]="loginForm.invalid">Login</button>
-      </div>
-      <div padding class="button-center">
-        <button round color="light-maroon" ion-button>Forgot password?</button>
-      </div>
-      <ion-item class="transparent-center">
-        <p style="color:white">Don't Have an account?</p>
-        <button outline color="maroon" ion-button (click)="navigateToRegisterPage()">Create Account Now</button>
-      </ion-item>
 
-    </ion-card-content>
-  </ion-card>
-</form>
+  <button class="login" class="login-translucent" round full ion-button (click)="login()">Login</button>
+

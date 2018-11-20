@@ -16,7 +16,7 @@ import { LoginResponse } from '../../models/login/login-response.interface';
 export class RegisterFormComponent {
 
   account = {} as Account;
-
+  password: string;
 
   @Output() registerStatus: EventEmitter<LoginResponse>;
   constructor(private auth: AuthService) {

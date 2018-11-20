@@ -1,32 +1,30 @@
-<form #registerForm="ngForm" novalidate>
-  <ion-card padding-top class="transparent">
-    <ion-card-content>
-      <ion-item class="translucent">
-        <ion-label></ion-label>
-        <ion-input class="input-white" placeholder="Email Address..." [(ngModel)]="account.email" type="email" name="email" #email="ngModel"
-          required pattern="[A-Za-z0-9._%+-]{3,}@[a-zA-Z]{3,}([.]{1}[a-zA-Z]{2,}|[.]{1}[a-zA-Z]{2,}[.]{1}[a-zA-Z]{2,})"></ion-input>
+<ion-header >
+  <ion-navbar transparent>
+
+  </ion-navbar>
+</ion-header>
+
+
+  <!-- <div class="img">
+    <img src="../../assets/imgs/logo.pn" alt="no image">
+  </div> -->
+  <div class="logo">Create Account</div>
+
+      <ion-item no-lines class="item">
+        <ion-input type="email" placeholder="Email" [(ngModel)]="account.email"></ion-input>
       </ion-item>
-      <div no-padding *ngIf="email.invalid && email.dirty && account.email !=''">
-        <ion-item class="translucent" padding-left>
-          <p style="color: white" class="error">Invalid email address</p>
-        </ion-item>
-      </div>
-      <ion-item class="translucent">
-        <ion-label></ion-label>
-        <ion-input class="input-white" placeholder="Password..." [(ngModel)]="account.password" type="password" name="password" #password="ngModel"
-          required pattern="[a-zA-Z0-9!@#$%^&*]{6,20}$"></ion-input>
+  
+      <ion-item no-lines class="item">
+        <ion-input type="password" placeholder="Password" [(ngModel)]="account.password"></ion-input>
       </ion-item>
 
-      <div no-padding *ngIf="password.invalid && password.dirty && account.password !=''">
-        <ion-item class="translucent" padding-left>
-          <p style="color: white">Password must be at least 6 characters long.</p>
+      <ion-item no-lines class="item">
+          <ion-input type="password" placeholder="Confirm Password" [(ngModel)]="password"></ion-input>
         </ion-item>
-      </div>
 
-    </ion-card-content>
+  
+  <div>
+    <button  class="login"  class="login-translucent" ion-button full round (click)="register()">Create Account</button>
 
-  </ion-card>
-  <ion-footer padding>
-    <button ion-button block color="maroon" (click)="register()" [disabled]="registerForm.invalid">Create Account</button>
-  </ion-footer>
-</form>
+  </div>
+

@@ -29,7 +29,7 @@ export class LoginFormComponent {
 
 
 
-  navigateToRegisterPage() : void {
+  register() : void {
     this.navCtrl.push('RegisterPage');
   }
 }

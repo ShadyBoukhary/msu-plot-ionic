@@ -1,15 +1,19 @@
 page-alerts {
     .alertOn{
-            background-color: whitesmoke;
             h1{
-                color: black;
+                color: color($colors, primary);
             }
     }
     .alertOff{
-            background-color: whitesmoke;
             h1{
                 color: lightgray;
             }
+    }
+
+    .alert {
+       // background-color: color($colors, dark);
+        border-radius: 20px;
+        margin-bottom: 5px;
     }
     .inline {
         display: inline-block;
@@ -27,7 +31,7 @@ page-alerts {
         justify-content: center;
         align-items: center;
         font-size: x-large;
-        color: maroon;
+        color: color($colors, primary);
         text-shadow: 5px 5px 10px #000;
     }
 }

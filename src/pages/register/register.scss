@@ -1,17 +1,13 @@
+page-register {
 
-.marginTop-register {
-    margin-top: +20%;
-    background-color: transparent !important;
-    border-top: 0px;
-    border-left: 0px;
-    border-right: 0px;
-    border-bottom: 0px;      
+  ion-content { 
+    background-image: url("../assets/imgs/hardin-blurred.png");
+    background-position: center;
+    display: block;
+    background-size: cover;
+    } 
+  
+  .back-button {
+      color: #9F0324;
   }
-
-  .background-register {
-    // background-color: maroon
-     background-image: url("../assets/imgs/hardin-blurred.png");
-     background-position: center;
-
- 
-   }
+}

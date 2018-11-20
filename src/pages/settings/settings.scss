@@ -2,4 +2,14 @@ page-settings {
     .greyBack {
         background-color: rgb(235, 235, 235);
     }
+
+    .item {
+       // background-color: color($colors, light);
+        border-radius: 15px;
+        margin-top: 5px;
+    }
+
+    ion-icon {
+        color: color($colors, primary);
+    }
 }

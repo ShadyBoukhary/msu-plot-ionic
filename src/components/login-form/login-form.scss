@@ -1,35 +1,77 @@
-.login-form__buttons {
-    padding: 10px;
-    float: right;
+page-login {
 
-    div button:nth-of-type(1) {
-        margin-right: 10px;
+    ion-content { 
+        background: url('../../assets/imgs/background-tint.jpg') no-repeat center center fixed; 
+        background-size: cover;
+      } 
+
+    .button-center {
+        text-align: center;
     }
-}
+    .button-end {
+        text-align: end;
+    }
+    .img{
+        height: auto;
+        width: auto ;
+        text-align: center;
+        display: block;
+        margin-top: -15%;
+        margin-bottom: -10%;
+       // margin-bottom: 50px;
+      }
+      .login {
+        padding-top: 3%;
+        padding-left: 5%;
+        padding-right: 5%;
+      }
 
+      .ion-card {
+          margin-top: -5%;
+          background-color: transparent;
+      }
+      .register-translucent {
+          margin-left: 3%;
+          margin-right: 3%;
+          font-weight: bold;
+          text-align: start;
+          font-size: 12px;
+          color: white;
+      }
 
-
-.translucent {
-     background-color:transparentize($color: maroon, $amount: 0.4) !important;
-    
-}
-
-.transparent-center {
-    background-color: transparent;
-    text-align: center;
-}
-
-.input-white {
-    @include placeholder; 
+      .forgot-translucent {
+      //  margin-left: 15%;
+       // margin-right: 3%;
+        font-weight: bold;
+        font-size: 12px;
         color: white;
-    
-}
+    }
+
+      .login-translucent {
+          margin-top: 10%;
+          margin-left: 3%;
+          margin-right: 3%;
+         // background-color:transparentize($color: #a1480d, $amount: 0) !important;
+
+          font-weight: bold;
+          width: 94%;
+          height: 45px;
+      }
+
+      .item {
+          ::placeholder {color: white}
+          color: white;
+          background-color:transparentize($color: rgb(255,255,255), $amount: 0.75) !important;
+          margin-top: 10px;
+          margin-left: 3%;
+          margin-right: 3%;
+          border-radius: 25px;
+          width: 94%;
+          height: 30px;
+      }
 
 
-.error {
-    color: white;
-}
+       
+   
 
-.button-center {
-    text-align: center;
 }
