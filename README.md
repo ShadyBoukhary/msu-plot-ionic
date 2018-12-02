@@ -4,9 +4,8 @@ Mobile application (in development) for Midwestern State University that enables
 
 ## Screenshots of the current version of the application
 
-<img src="./resources/screenshots/IMG_9088.png" width="250"> <img src="./resources/screenshots/IMG_9089.png" width="250">  <img src="./resources/screenshots/IMG_9090.png" width="250">
-<img src="./resources/screenshots/IMG_9091.png" width="250">  <img src="./resources/screenshots/IMG_9092.png" width="250">  <img src="./resources/screenshots/IMG_9093.png" width="250">
-
+<img src="./resources/screenshots/ss1.png" width="250"> <img src="./resources/screenshots/ss2.png" width="250">  <img src="./resources/screenshots/ss3.png" width="250">
+<img src="./resources/screenshots/ss4.png" width="250">  
 
 ## Built with
 

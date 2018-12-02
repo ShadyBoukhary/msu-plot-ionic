@@ -18,6 +18,9 @@ import { AppVersion } from '@ionic-native/app-version';
 import { Globalization } from '@ionic-native/globalization';
 import { ApiServiceProvider } from '../providers/api-service/api-service';
 import { LocalNotifications } from '@ionic-native/local-notifications';
+import { LotServiceProvider } from '../providers/lot-service/lot-service';
+import { HttpClientModule } from '@angular/common/http';
+import { HTTP } from '@ionic-native/http';
 
 
 @NgModule({
@@ -31,7 +34,8 @@ import { LocalNotifications } from '@ionic-native/local-notifications';
     IonicModule.forRoot(MyApp),
     AngularFireModule.initializeApp(FIREBASE_CONFIG),
     AngularFireAuthModule,
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    HttpClientModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -49,6 +53,8 @@ import { LocalNotifications } from '@ionic-native/local-notifications';
     Globalization,
     ApiServiceProvider,
     LocalNotifications,
+    LotServiceProvider,
+    HTTP
     
   ]
 })
