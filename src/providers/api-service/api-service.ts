@@ -23,9 +23,7 @@ export class ApiServiceProvider {
     repeat: false,
     lot: ''
   };
-  constructor(private events: Events, private toast: ToastController, private notf: LocalNotifications, private data: DataService) {
-
-  }
+  constructor(private events: Events, private toast: ToastController, private notf: LocalNotifications, private data: DataService) {}
 
   initialize() {
     this.events.subscribe(('alert-created'), (alert: Alert, user: User) => {
@@ -40,12 +38,10 @@ export class ApiServiceProvider {
       if (this.alert.state == true && prev == false) {
         this.events.publish('alert-created', alert, user);
       }
-      console.log('edited');
       console.log(this.alert);
     });
     this.events.subscribe(('alert-deleted'), () => {
       this.alert.state = false;
-      console.log('deleted');
     });
   }
 
@@ -83,10 +79,6 @@ export class ApiServiceProvider {
     }
   }
 
-  // async
-  getLotInfo() {
-
-  }
 
   async sendNotification(alert: Alert, data: String) {
     if (!this.notf.hasPermission()) {

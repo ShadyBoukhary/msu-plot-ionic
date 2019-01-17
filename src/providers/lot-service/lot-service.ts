@@ -71,7 +71,10 @@ export class LotServiceProvider {
   }
 
   private parseLotData(data: any): Space[] {
-    let parsed = JSON.parse(data.data.lot_data);
+    let responseData = JSON.parse(data.data);
+    console.log(responseData);
+    let parsed = JSON.parse(responseData.data.lot_data);
+
     let lotData: Space[] = [];
     parsed.forEach(element => {
       lotData.push({ id: parseInt(element.id), occupied: element.occupied === '1' ? true : false });

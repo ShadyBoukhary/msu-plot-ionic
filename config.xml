@@ -3,7 +3,7 @@
     <name>MSU_PLot</name>
     <description>An awesome Ionic/Cordova app.</description>
     <author email="sb199898.sb@gmail.com" href="http://ionicframework.com/">Shady Boukhary</author>
-    <content src="index.html" />
+    <content original-src="index.html" src="http://10.107.133.145:8100" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
@@ -86,6 +86,7 @@
     <plugin name="cordova-plugin-globalization" spec="^1.0.9" />
     <plugin name="cordova-plugin-local-notification" spec="^0.9.0-beta.2" />
     <plugin name="cordova-plugin-advanced-http" spec="2.0.1" />
+    <allow-navigation href="http://10.107.133.145:8100" sessionid="623fe884" />
     <engine name="ios" spec="^4.5.4" />
     <engine name="android" spec="7.0.0" />
 </widget>
