@@ -25,7 +25,3 @@ Mobile application (in development) for Midwestern State University that enables
 
 * **Repository associated with defining the parking spaces on google maps: https://github.com/ShadyBoukhary/parking-spaces-overlays-MSU**
 
-## References
-
-* https://ionicframework.com/docs/
-
